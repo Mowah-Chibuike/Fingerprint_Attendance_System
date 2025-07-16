@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/devices/{ip}')
+@app.route('/devices/<ip>')
 def get_ipaddress(ip):
     return jsonify({
         "ip": ip 
