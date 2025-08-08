@@ -1,1 +1,0 @@
-# FingerPrint Attendance Frontend

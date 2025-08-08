@@ -1,0 +1,87 @@
+.container {
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  margin: 0.2rem;
+}
+
+form {
+  --gap: 0.75rem;
+  width: min(100%, 600px);
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-block-start: 2.5rem;
+}
+
+.formGroup {
+  --gap: 0.5rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fdfd96;
+}
+
+label {
+  font-size: 1rem;
+  color: #fdfd96;
+}
+
+input {
+  font-size: 1em;
+  padding: 15px 10px;
+  width: 100%;
+  border: none;
+  border-radius: 0.95em;
+  outline: none;
+}
+
+input::placeholder {
+  font-size: 0.95em;
+}
+
+button[type="submit"] {
+  font-size: 16px;
+  padding: 10px 35px;
+  margin: 20px 0;
+  font-weight: bold;
+  border: 0;
+  border-radius: 5px;
+  background-color: #0ad614;
+}
+
+label,
+input,
+button,
+a {
+  font-family: "Montserrat", sans-serif;
+}
+
+button[type="submit"]:hover {
+  background-color: #7aee7f;
+  cursor: pointer;
+}
+
+p,
+h4 {
+  color: white;
+  font-size: 0.85em;
+  font-weight: 300;
+}
+
+a {
+  color: #0ad614;
+  text-decoration: none;
+}
+
+.errorContainer {
+  color: red;
+}

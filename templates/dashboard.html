@@ -1,0 +1,77 @@
+{% extends "base.html" %} {% block title %}Dashboard{% endblock %} {% block head
+%}{{ super() }}
+<link
+  rel="stylesheet"
+  href="{{url_for('static', filename='css/dashboard.css')}}"
+/>
+<script defer src="{{url_for('static', filename='js/dashboard.js')}}"></script>
+{% endblock %} {% block content %}
+
+<div class="grid-container">
+  <div class="overlay">
+        <div class="alert">
+            <p class="alert-message"></p>
+        </div>
+        <button id="close">&times;</button>
+        <div class="modal">
+            <h2>Available Devices</h2>
+            <div class="content"></div>
+        </div>
+    </div>
+  <header class="header">
+      <button
+    class="mobile-sidebar-toggle"
+    aria-controls="sidebar"
+    aria-expanded="false"
+  >
+    <span class="dash top"></span>
+    <span class="dash bottom"></span>
+  </button>
+    <button class="connect">
+      <i class="fa-solid fa-plug"></i>
+      <p>Connect</p>
+      <span class="status {% if current_user.device %}connected{% endif %}"><span>
+      </button>
+  </header>
+
+  <!-- Sidebar -->
+  <aside data-visible="false" id="sidebar">
+    <div class="logo">
+        <h2>ATTENDANCE</h2>
+    </div>
+
+    <ul class="sidebar-list">
+        <li class="dash-link current" data-page="enroll"><i class="fa-solid fa-pen"></i>Enroll</li>
+        <li class="dash-link" data-page="verification"><i class="fa-solid fa-circle-check"></i>Verification</li>
+        <li class="dash-link" data-page="statistics"><i class="fa-solid fa-chart-pie"></i>Statistics</li>
+        <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="{{url_for('auth.logout')}}">Log out</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <main class="main-container">
+    <div class="alert fade-out">
+        <p class="alert-message"></p>
+    </div>
+    <div class="overlay">
+        <div class="dots show">
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+        </div>
+    </div>  
+    {% include "enrol.html" %}
+    <div class="page" id="verification"><p>Please Stay!</p></div>
+    <div class="page" id="statistics"><p>Get out from here!</p></div>
+  </main>
+</div>
+<!-- Header -->
+
+{% endblock %}

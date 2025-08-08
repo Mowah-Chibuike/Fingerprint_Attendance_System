@@ -1,0 +1,30 @@
+<header class="primary-header flex">
+  <div>
+    <h2 class="logo">ATTENDANCE</h2>
+  </div>
+  <button
+    class="mobile-nav-toggle"
+    aria-controls="primary-navigation"
+    aria-expanded="false"
+  >
+    <span class="dash top"></span>
+    <span class="dash bottom"></span>
+  </button>
+  <nav>
+    <ul
+      id="primary-navigation"
+      data-visible="false"
+      class="primary-navigation flex"
+    >
+      <li>
+        <a href="{{url_for('main.index')}}">Home</a>
+      </li>
+      <li>
+        <a href="{{url_for('auth.signup')}}">Sign Up</a>
+      </li>
+      <li>
+        <a href="{{url_for('auth.login')}}">Login</a>
+      </li>
+    </ul>
+  </nav>
+</header>
