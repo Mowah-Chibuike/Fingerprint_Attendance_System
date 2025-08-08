@@ -1,0 +1,57 @@
+<div class="page current" id="enroll">
+  <h1>Enroll Attendee</h1>
+  <form id="form" action="/enroll" method="post" class="flex">
+    <div class="formGroup flex">
+      <label for="first_name">First Name</label>
+      <input
+        required
+        name="first_name"
+        id="first_name"
+        type="text"
+        placeholder="Enter first name"
+      />
+      <p class="errorContainer"></p>
+    </div>
+
+    <div class="formGroup flex">
+      <label for="last_name">Last Name</label>
+      <input
+        required
+        type="text"
+        name="last_name"
+        id="last_name"
+        placeholder="Enter last name"
+      />
+      <p class="errorContainer"></p>
+    </div>
+    <div class="formGroup flex">
+      <label for="matric_no">Matric Number</label>
+      <input
+        required
+        type="number"
+        name="matric_no"
+        id="matric_no"
+        placeholder="Enter matric number"
+      />
+      <p class="errorContainer"></p>
+    </div>
+    <div class="formGroup flex">
+      <label for="department">Department</label>
+      <select name="department" id="department">
+        <option default value="MTE">MTE</option>
+      </select>
+      <p class="errorContainer"></p>
+    </div>
+
+    <div class="formGroup flex">
+      <label for="fingerprint">Fingerprint</label>
+      <div class="flex">
+        <input name="fingerprint" id="fingerprint" required />
+        <button id="getPrint">Get</button>
+      </div>
+
+      <p class="errorContainer"></p>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>

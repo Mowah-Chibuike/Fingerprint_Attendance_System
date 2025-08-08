@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block title %}Signup{% endblock %} {% block head%}
+{{ super() }} <link rel='stylesheet' href={{ url_for('static',
+filename='css/navbar.css') }}> <link rel='stylesheet' href={{ url_for('static',
+filename='css/auth.css') }}>
+
+<script defer src="{{url_for('static', filename='js/navbar.js')}}"></script>
+<script defer src="{{url_for('static', filename='js/form.js')}}"></script>
+{% endblock %} {% block content %} {% include "navbar.html" %}
+<div class="container flex">
+  <h1>WELCOME BACK</h1>
+  <h4>Enter your username and password to access your account</h4>
+  <form id="form" action="{{url_for('auth.login')}}" method="post" class="flex">
+    <div class="formGroup flex">
+      <label for="username">Username</label>
+      <input
+        required
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Enter your username"
+      />
+      <p class="errorContainer"></p>
+    </div>
+    <div class="formGroup flex">
+      <label for="password">Password</label>
+      <input
+        required
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter your password"
+      />
+      <p class="errorContainer"></p>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <p>
+    Don't have an account?
+    <a href="{{url_for('auth.signup')}}">Sign Up</a>
+  </p>
+</div>
+
+{%endblock%}
